@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel · Bonita Kids</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/img/m/icono-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/img/m/icono-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/tienda.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<!-- ---------- ENTRAR ---------- -->
+<div id="puerta" class="entrar">
+  <img class="entrar__logo" src="/img/m/logo-bk.webp" alt="Moda Infantil Bonita Kids" width="812" height="161">
+  <h2>Panel de la tienda</h2>
+  <p>Desde aquí subes prendas nuevas y quitas las que ya no tienes.</p>
+  <label class="cmp" style="margin-top:22px;text-align:left"><span>Tu clave</span>
+    <input type="password" id="pin" autocomplete="current-password" placeholder="••••••••">
+  </label>
+  <div id="aviso-pin"></div>
+  <button class="btn btn--bloque" id="bt-entrar">Entrar</button>
+</div>
+
+<!-- ---------- PANEL ---------- -->
+<div id="panel" class="oculto">
+  <div class="pnl-cab">
+    <div class="env pnl-cab__fila" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+      <h1><img src="/img/m/logo-bk.webp" alt="Moda Infantil Bonita Kids" width="812" height="161"><small>Panel de la tienda</small></h1>
+      <div class="pnl-acc">
+        <a class="mini" href="/" target="_blank" style="color:#F3EAE2;border-color:rgba(255,255,255,.3)">Ver la web</a>
+        <button class="mini" id="bt-salir" style="color:#F3EAE2;border-color:rgba(255,255,255,.3)">Salir</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="pnl">
+    <div id="chivato"></div>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true"  data-t="prendas">Prendas</button>
+      <button role="tab" aria-selected="false" data-t="colecciones">Categorías</button>
+      <button role="tab" aria-selected="false" data-t="tallas">Tallas y colores</button>
+      <button role="tab" aria-selected="false" data-t="tienda">Datos de la tienda</button>
+    </div>
+    <div id="vista"></div>
+  </div>
+
+  <div class="aviso-guardar" id="barra-guardar">
+    <span id="txt-guardar">Tienes cambios sin publicar.</span>
+    <div style="display:flex;gap:10px">
+      <button class="mini" id="bt-descartar" style="color:#fff;border-color:rgba(255,255,255,.35)">Descartar</button>
+      <button class="btn" id="bt-publicar" style="background:#fff;color:#2B2521;border-color:#fff;padding:11px 24px">Publicar cambios</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>
