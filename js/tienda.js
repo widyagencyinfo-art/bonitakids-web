@@ -279,7 +279,7 @@
   <div class="mega" id="mega">
     <div class="env mega__caja">
       <div class="mega__rejilla">
-        ${cols.map(c => `<a class="mega__it" href="/tienda?col=${c.id}">
+        ${cols.map(c => `<a class="mega__it" href="/tienda/${c.id}">
           <img src="${c.portada}" alt="Colección ${BK.esc(c.nombre)}" loading="lazy">
           <h4>${BK.esc(c.nombre)}</h4>${BK.lineasDe(c.id).length
             ? `<p class="mega__lineas">${(BK.gruposDe(c.id).length ? BK.gruposDe(c.id) : BK.lineasDe(c.id)).map(l => BK.esc(l.nombre)).join(' · ')}</p>`
@@ -311,10 +311,10 @@
   </div>
   <nav>
     <a href="/tienda">Toda la tienda</a>
-    ${cols.map(c => `<a href="/tienda?col=${c.id}">${BK.esc(c.nombre)}<small>${BK.lineasDe(c.id).length ? BK.lineasDe(c.id).length + ' colecciones' : 'Muy pronto'}</small></a>`
+    ${cols.map(c => `<a href="/tienda/${c.id}">${BK.esc(c.nombre)}<small>${BK.lineasDe(c.id).length ? BK.lineasDe(c.id).length + ' colecciones' : 'Muy pronto'}</small></a>`
       + (BK.gruposDe(c.id).length
-        ? BK.gruposDe(c.id).map(g => `<a class="movil__sub" href="/tienda?col=${c.id}&grupo=${g.id}">${BK.esc(g.nombre)}</a>`)
-        : BK.lineasDe(c.id).map(l => `<a class="movil__sub" href="/tienda?col=${c.id}&linea=${l.id}">${BK.esc(l.nombre)}</a>`)).join('')).join('')}
+        ? BK.gruposDe(c.id).map(g => `<a class="movil__sub" href="/tienda/${c.id}/${g.id}">${BK.esc(g.nombre)}</a>`)
+        : BK.lineasDe(c.id).map(l => `<a class="movil__sub" href="/tienda/${c.id}/coleccion-${l.id}">${BK.esc(l.nombre)}</a>`)).join('')).join('')}
     <a href="/tienda?quien=nina">Niña</a>
     <a href="/tienda?quien=nino">Niño</a>
     <a href="/tienda?quien=bebe">Bebé</a>
@@ -400,7 +400,7 @@
       } else {
         res.innerHTML = hallados.map(p => {
           const c = BK.coleccion(p.coleccion);
-          return `<a class="bus__it" href="/producto?id=${encodeURIComponent(p.id)}">
+          return `<a class="bus__it" href="/producto/${encodeURIComponent(p.id)}">
             <img src="${BK.foto(p, 0)}" alt="" loading="lazy">
             <span><small>${BK.esc(BK.nombreCol(p) || p.tipo || '')}</small>
               <b>${BK.esc(p.nombre)}</b>
@@ -441,7 +441,7 @@
         ${L.email ? `<li><span>Correo</span><a href="mailto:${BK.esc(L.email)}">${BK.esc(L.email)}</a></li>` : ''}
       </ul></div>
       <div><h4>Colecciones</h4><ul>
-        ${cols.map(c => `<li><a href="/tienda?col=${c.id}">${BK.esc(c.nombre)}</a></li>`).join('')}
+        ${cols.map(c => `<li><a href="/tienda/${c.id}">${BK.esc(c.nombre)}</a></li>`).join('')}
       </ul></div>
       <div><h4>La tienda</h4><ul>
         <li><a href="/tienda">Todas las prendas</a></li>
@@ -555,7 +555,7 @@
     const f2 = (p.fotos || []).find(f => f !== f1);
     const cols = (p.colores || []).slice(0, 4);
     return `<article class="ficha aparece">
-      <a class="ficha__foto" href="/producto?id=${encodeURIComponent(p.id)}" aria-label="${BK.esc(p.nombre)}">
+      <a class="ficha__foto" href="/producto/${encodeURIComponent(p.id)}" aria-label="${BK.esc(p.nombre)}">
         ${p.destacado ? '<span class="ficha__eti">Destacado</span>' : ''}
         <img class="a" src="${f1}" alt="${BK.esc(p.nombre)}" loading="lazy">
         ${f2 ? `<img class="b" src="${f2}" alt="" loading="lazy" aria-hidden="true">` : ''}
@@ -566,7 +566,7 @@
       </button>
       <div class="ficha__cuerpo">
         <span class="ficha__col">${BK.esc(BK.nombreCol(p) || p.tipo || '')}</span>
-        <a class="ficha__nom" href="/producto?id=${encodeURIComponent(p.id)}">${BK.esc(p.nombre)}</a>
+        <a class="ficha__nom" href="/producto/${encodeURIComponent(p.id)}">${BK.esc(p.nombre)}</a>
         <div class="ficha__meta">
           <span class="puntos">${cols.map(c => `<i class="punto" style="background:${BK.colorHex(c)}" title="${BK.esc(c)}"></i>`).join('')}
           ${(p.colores || []).length > 4 ? `<i class="punto punto--mas">+${p.colores.length - 4}</i>` : ''}</span>
@@ -639,7 +639,7 @@
     </div>
     <div class="acciones">
       <button class="btn btn--bloque" id="rv-anadir">Añadir a mi pedido</button>
-      <a class="btn btn--linea btn--bloque" href="/producto?id=${encodeURIComponent(p.id)}">Ver la ficha completa</a>
+      <a class="btn btn--linea btn--bloque" href="/producto/${encodeURIComponent(p.id)}">Ver la ficha completa</a>
     </div>
   </div>`;
 

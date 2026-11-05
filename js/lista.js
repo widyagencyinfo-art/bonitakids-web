@@ -4,6 +4,9 @@
 
   const $ = s => document.querySelector(s);
   const par = new URLSearchParams(location.search);
+  { const m = location.pathname.match(/^\/tienda\/([^\/]+)(?:\/([^\/]+))?/);
+    if (m) { par.set('col', decodeURIComponent(m[1]));
+      if (m[2]) { const s = decodeURIComponent(m[2]); s.startsWith('coleccion-') ? par.set('linea', s.slice(10)) : par.set('grupo', s); } } }
   const estado = {
     ocasion: par.getAll('ocasion'),
     quien: par.getAll('quien'),
@@ -126,8 +129,8 @@
       const g = l && BK.grupo(l.grupo);
       if (l) {
         $('#titulo-tienda').textContent = 'Colección ' + l.nombre;
-        $('#miga').innerHTML = c ? `<a href="/tienda?col=${c.id}">${BK.esc(c.nombre)}</a>`
-          + (g ? ` &nbsp;/&nbsp; <a href="/tienda?col=${c.id}&grupo=${g.id}">${BK.esc(g.nombre)}</a>` : '') : 'Colecciones';
+        $('#miga').innerHTML = c ? `<a href="/tienda/${c.id}">${BK.esc(c.nombre)}</a>`
+          + (g ? ` &nbsp;/&nbsp; <a href="/tienda/${c.id}/${g.id}">${BK.esc(g.nombre)}</a>` : '') : 'Colecciones';
         $('#sub-tienda').textContent = l.desc || '';
         return;
       }
@@ -137,7 +140,7 @@
       const c = g && BK.coleccion(g.categoria);
       if (g) {
         $('#titulo-tienda').textContent = g.nombre;
-        $('#miga').innerHTML = c ? `<a href="/tienda?col=${c.id}">${BK.esc(c.nombre)}</a>` : 'Categoría';
+        $('#miga').innerHTML = c ? `<a href="/tienda/${c.id}">${BK.esc(c.nombre)}</a>` : 'Categoría';
         $('#sub-tienda').textContent = g.desc || '';
         return;
       }
@@ -172,7 +175,7 @@
       b.className = 'banda-col banda-col--fotos';
       b.innerHTML = `<div class="banda-col__pista">${lin.fotos.map(f => {
         const p = productos.find(x => (x.fotos || []).includes(f));
-        return `<a href="${p ? '/producto?id=' + encodeURIComponent(p.id) : '#'}"><img src="${f}" alt="${BK.esc(p ? p.nombre : 'Colección ' + lin.nombre)}" loading="lazy"></a>`;
+        return `<a href="${p ? '/producto/' + encodeURIComponent(p.id) : '#'}"><img src="${f}" alt="${BK.esc(p ? p.nombre : 'Colección ' + lin.nombre)}" loading="lazy"></a>`;
       }).join('')}</div>`;
       return;
     }
@@ -180,7 +183,7 @@
     const gr = cat && estado.grupo.length === 1 ? BK.grupo(estado.grupo[0]) : null;
     const tarjLinea = l => {
       const n = productos.filter(p => p.linea === l.id).length;
-      return `<a class="banda-col__tarj" href="/tienda?col=${cat}&linea=${l.id}">
+      return `<a class="banda-col__tarj" href="/tienda/${cat}/coleccion-${l.id}">
           <figure><img src="${(l.fotos || [])[0] || '/img/l/marco.svg'}" alt="Colección ${BK.esc(l.nombre)}" loading="lazy"></figure>
           <span><small>Colección</small><b>${BK.esc(l.nombre)}</b><em>${n} ${n === 1 ? 'prenda' : 'prendas'}</em></span></a>`;
     };
@@ -190,7 +193,7 @@
       b.className = 'banda-col banda-col--tarjetas banda-col--grupos';
       b.innerHTML = grupos.map(g => {
         const ls = BK.lineasDe(cat, g.id);
-        return `<a class="banda-col__tarj" href="/tienda?col=${cat}&grupo=${g.id}" data-grupo="${g.id}">
+        return `<a class="banda-col__tarj" href="/tienda/${cat}/${g.id}" data-grupo="${g.id}">
           <figure><img src="${g.portada || (ls[0].fotos || [])[0] || '/img/l/marco.svg'}" alt="${BK.esc(g.nombre)}" loading="lazy"></figure>
           <span><small>${BK.esc((BK.coleccion(cat) || {}).nombre || '')}</small><b>${BK.esc(g.nombre)}</b><em>${ls.length} ${ls.length === 1 ? 'colección' : 'colecciones'}</em></span></a>`;
       }).join('');
@@ -205,7 +208,7 @@
       b.className = 'banda-col banda-col--grupo';
       b.innerHTML = ((gr.fotos || []).length ? `<div class="banda-col__pista">${gr.fotos.map(f => {
         const p = productos.find(x => (x.fotos || []).includes(f));
-        return `<a href="${p ? '/producto?id=' + encodeURIComponent(p.id) : '#'}"${p ? '' : ' tabindex="-1" class="sin-enlace"'}><img src="${f}" alt="${BK.esc(p ? p.nombre : gr.nombre)}" loading="lazy"></a>`;
+        return `<a href="${p ? '/producto/' + encodeURIComponent(p.id) : '#'}"${p ? '' : ' tabindex="-1" class="sin-enlace"'}><img src="${f}" alt="${BK.esc(p ? p.nombre : gr.nombre)}" loading="lazy"></a>`;
       }).join('')}</div>` : '')
         + `<div class="banda-col--tarjetas">${ls.map(tarjLinea).join('')}</div>`;
       b.querySelectorAll('.sin-enlace').forEach(a => a.onclick = e => e.preventDefault());
@@ -290,7 +293,12 @@
     ['ocasion', 'quien', 'col', 'grupo', 'linea', 'tipo', 'color', 'talla'].forEach(g => estado[g].forEach(v => u.append(g, v)));
     if (estado.q) u.set('q', estado.q);
     if (estado.orden !== 'rec') u.set('orden', estado.orden);
-    history.replaceState(null, '', location.pathname + (u.toString() ? '?' + u : ''));
+    { let ruta = '/tienda';
+      if (estado.col.length === 1 && estado.grupo.length + estado.linea.length <= 1) {
+        ruta += '/' + estado.col[0] + (estado.linea[0] ? '/coleccion-' + estado.linea[0] : estado.grupo[0] ? '/' + estado.grupo[0] : '');
+        u.delete('col'); u.delete('grupo'); u.delete('linea');
+      }
+      history.replaceState(null, '', ruta + (u.toString() ? '?' + u : '')); }
     pintarFiltros();
   }
 

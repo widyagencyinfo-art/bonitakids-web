@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="es">
 <head>
+<script>(function(){var q=new URLSearchParams(location.search),p=location.pathname.replace(/\.html$/,''),d=null;
+if(p==='/producto'&&q.get('id')){d='/producto/'+encodeURIComponent(q.get('id'));q.delete('id');}
+else if(p==='/tienda'&&q.getAll('col').length===1&&q.getAll('linea').length+q.getAll('grupo').length<=1){
+d='/tienda/'+q.get('col')+(q.get('linea')?'/coleccion-'+q.get('linea'):q.get('grupo')?'/'+q.get('grupo'):'');q.delete('col');q.delete('linea');q.delete('grupo');}
+if(d){var r=q.toString();location.replace(d+(r?'?'+r:'')+location.hash);}})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prenda · Bonita Kids</title>

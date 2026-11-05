@@ -2,7 +2,7 @@
 (async function () {
   await BK.iniciar('tienda');
   const $ = s => document.querySelector(s);
-  const id = new URLSearchParams(location.search).get('id');
+  const id = decodeURIComponent((location.pathname.match(/^\/producto\/([^\/?#]+)/) || [])[1] || '') || new URLSearchParams(location.search).get('id');
   const p = id && BK.porId(id);
 
   if (!p || p.activo === false) {
@@ -30,7 +30,7 @@
   // La canónica y el JSON-LD ya vienen del servidor (api/pagina.js); aquí solo si faltan.
   const yaSeo = !!document.querySelector('link[rel="canonical"]');
   const lnk = document.createElement('link');
-  lnk.rel = 'canonical'; lnk.href = location.origin + '/producto?id=' + p.id; if (!yaSeo) document.head.appendChild(lnk);
+  lnk.rel = 'canonical'; lnk.href = location.origin + '/producto/' + p.id; if (!yaSeo) document.head.appendChild(lnk);
   const ld = document.createElement('script');
   ld.type = 'application/ld+json';
   ld.textContent = JSON.stringify({
@@ -43,9 +43,9 @@
   });
   if (!yaSeo) document.head.appendChild(ld);
   const lin = BK.linea(p.linea);
-  $('#miga').innerHTML = `<a href="/tienda">Tienda</a> &nbsp;/&nbsp; <a href="/tienda?col=${p.coleccion}">${BK.esc(col ? col.nombre : '')}</a>`
-    + (lin && BK.grupo(lin.grupo) ? ` &nbsp;/&nbsp; <a href="/tienda?col=${p.coleccion}&grupo=${lin.grupo}">${BK.esc(BK.grupo(lin.grupo).nombre)}</a>` : '')
-    + (lin ? ` &nbsp;/&nbsp; <a href="/tienda?col=${p.coleccion}&linea=${lin.id}">${BK.esc(lin.nombre)}</a>` : '')
+  $('#miga').innerHTML = `<a href="/tienda">Tienda</a> &nbsp;/&nbsp; <a href="/tienda/${p.coleccion}">${BK.esc(col ? col.nombre : '')}</a>`
+    + (lin && BK.grupo(lin.grupo) ? ` &nbsp;/&nbsp; <a href="/tienda/${p.coleccion}/${lin.grupo}">${BK.esc(BK.grupo(lin.grupo).nombre)}</a>` : '')
+    + (lin ? ` &nbsp;/&nbsp; <a href="/tienda/${p.coleccion}/coleccion-${lin.id}">${BK.esc(lin.nombre)}</a>` : '')
     + ` &nbsp;/&nbsp; ${BK.esc(p.nombre)}`;
 
   BK.verReciente(p.id);
@@ -246,7 +246,7 @@
 
   /* ---------- compartir (las madres se lo mandan a la abuela) ---------- */
   $('#bt-compartir').onclick = async () => {
-    const url = location.origin + '/producto?id=' + encodeURIComponent(p.id);
+    const url = location.origin + '/producto/' + encodeURIComponent(p.id);
     const datos = { title: p.nombre + ' · ' + ((BK.cat.tienda || {}).nombre || ''), text: p.nombre, url };
     if (navigator.share) {
       try { await navigator.share(datos); } catch (e) { /* ha cancelado */ }
@@ -338,7 +338,7 @@
       document.querySelector('#sec-relacionados .titulo-sec').textContent = 'Para vestirlos a juego';
     }
     $('#relacionados').innerHTML = rel.map(BK.tarjeta).join('');
-    $('#ver-col').href = '/tienda?col=' + p.coleccion + (lin ? '&linea=' + lin.id : '');
+    $('#ver-col').href = '/tienda/' + p.coleccion + (lin ? '/coleccion-' + lin.id : '');
     $('#sec-relacionados').classList.remove('oculto');
   }
   BK.aparecer();

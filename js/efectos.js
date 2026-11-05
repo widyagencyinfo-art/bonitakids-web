@@ -317,7 +317,7 @@
     const limpiar = () => document.querySelectorAll('img[style*="view-transition-name"]')
       .forEach(i => { i.style.viewTransitionName = ''; });
     document.addEventListener('click', e => {
-      const a = e.target.closest('a[href*="/producto?id="]');
+      const a = e.target.closest('a[href*="/producto/"]');
       if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
       limpiar();
       let fotos = [...a.querySelectorAll('img')];

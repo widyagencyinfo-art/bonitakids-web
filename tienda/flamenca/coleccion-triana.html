@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colección Triana · Flamenca infantil · Bonita Kids</title>
+<meta name="description" content="Colección Triana de flamenca en Moda Infantil Bonita Kids: Bata flamenca Triana.">
+<meta name="theme-color" content="#22362E">
+<meta property="og:title" content="Colección Triana · Flamenca infantil · Bonita Kids">
+<meta property="og:description" content="Colección Triana de flamenca en Moda Infantil Bonita Kids: Bata flamenca Triana.">
+<meta property="og:image" content="https://bonitakids.es/img/p/bk2/triana-059.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/img/m/icono-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/img/m/icono-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/tienda.css">
+<link rel="stylesheet" href="/css/efectos.css">
+<link rel="stylesheet" href="/css/lujo.css">
+<meta property="og:url" content="https://bonitakids.es/tienda/flamenca/coleccion-triana">
+<link rel="canonical" href="https://bonitakids.es/tienda/flamenca/coleccion-triana">
+<meta property="og:site_name" content="Moda Infantil Bonita Kids">
+<meta property="og:locale" content="es_ES">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tienda","item":"https://bonitakids.es/tienda"},{"@type":"ListItem","position":2,"name":"Flamenca","item":"https://bonitakids.es/tienda/flamenca"},{"@type":"ListItem","position":3,"name":"Colección Triana","item":"https://bonitakids.es/tienda/flamenca/coleccion-triana"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Colección Triana","itemListElement":[{"@type":"ListItem","position":1,"url":"https://bonitakids.es/producto/triana-bata","name":"Bata flamenca Triana"}]}</script>
+</head>
+<body>
+<div id="cabecera"></div>
+
+<main class="env" style="padding-top:clamp(30px,4vw,56px);padding-bottom:clamp(56px,8vw,96px)">
+  <div class="sec__cab" style="margin-bottom:30px">
+    <span class="cejilla" id="miga">Tienda</span>
+    <h1 class="titulo-sec" id="titulo-tienda">Colección Triana</h1>
+    <p class="entradilla" id="sub-tienda" style="margin-top:10px">En plumety blanco o beige.</p>
+  </div>
+  <div class="banda-col oculto" id="banda-col"></div>
+
+  <div class="tienda">
+    <!-- ---------- FILTROS ---------- -->
+    <aside class="filtros" id="filtros">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+        <strong style="font-size:11px;letter-spacing:.22em;text-transform:uppercase">Filtrar</strong>
+        <button id="cerrar-filtros" class="enlace-sub" style="display:none">Cerrar</button>
+      </div>
+      <div id="buscar" class="filtro">
+        <label class="filtro__tit" for="q">Buscar</label>
+        <input id="q" type="search" placeholder="vestido, jesusito, celeste…"
+               style="width:100%;padding:10px 12px;border:1px solid var(--linea-fuerte);background:#fff;font-size:13px">
+      </div>
+      <div class="filtro"><span class="filtro__tit">Ocasión</span><ul id="f-ocasion"></ul></div>
+      <div class="filtro"><span class="filtro__tit">Categoría</span><ul id="f-col"></ul></div>
+      <div class="filtro"><span class="filtro__tit">Colección</span><ul id="f-linea"></ul></div>
+      <div class="filtro"><span class="filtro__tit">A quién viste</span><ul id="f-quien"></ul></div>
+      <div class="filtro"><span class="filtro__tit">Tipo de prenda</span><ul id="f-tipo"></ul></div>
+      <div class="filtro"><span class="filtro__tit">Color</span><ul id="f-color"></ul></div>
+      <div class="filtro"><span class="filtro__tit">Talla</span><div class="tallas-fil" id="f-talla"></div></div>
+      <button class="btn btn--linea btn--bloque" id="limpiar" style="margin-top:6px">Quitar filtros</button>
+      <div class="filtros__pie">
+        <button class="btn btn--linea" id="limpiar-m">Quitar</button>
+        <button class="btn" id="ver-res">Ver prendas</button>
+      </div>
+    </aside>
+
+    <!-- ---------- RESULTADOS ---------- -->
+    <div>
+      <div class="rapidos" id="rapidos" role="group" aria-label="Filtros rápidos"></div>
+      <div class="barra-tienda">
+        <button class="btn btn--linea abre-filtros" id="abre-filtros" style="padding:11px 20px">Filtrar</button>
+        <span class="cuenta" id="cuenta"></span>
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="densidad" id="densidad" role="group" aria-label="Tamaño de la rejilla">
+            <button data-d="2" aria-pressed="false" aria-label="Dos por fila"><svg viewBox="0 0 16 16"><rect x="0" y="0" width="7" height="7"/><rect x="9" y="0" width="7" height="7"/><rect x="0" y="9" width="7" height="7"/><rect x="9" y="9" width="7" height="7"/></svg></button>
+            <button data-d="3" aria-pressed="true" aria-label="Tres por fila"><svg viewBox="0 0 16 16"><rect x="0" y="0" width="4.5" height="4.5"/><rect x="5.75" y="0" width="4.5" height="4.5"/><rect x="11.5" y="0" width="4.5" height="4.5"/><rect x="0" y="5.75" width="4.5" height="4.5"/><rect x="5.75" y="5.75" width="4.5" height="4.5"/><rect x="11.5" y="5.75" width="4.5" height="4.5"/><rect x="0" y="11.5" width="4.5" height="4.5"/><rect x="5.75" y="11.5" width="4.5" height="4.5"/><rect x="11.5" y="11.5" width="4.5" height="4.5"/></svg></button>
+            <button data-d="4" aria-pressed="false" aria-label="Cuatro por fila"><svg viewBox="0 0 16 16"><rect x="0" y="0" width="3.2" height="3.2"/><rect x="4.3" y="0" width="3.2" height="3.2"/><rect x="8.6" y="0" width="3.2" height="3.2"/><rect x="12.8" y="0" width="3.2" height="3.2"/><rect x="0" y="4.3" width="3.2" height="3.2"/><rect x="4.3" y="4.3" width="3.2" height="3.2"/><rect x="8.6" y="4.3" width="3.2" height="3.2"/><rect x="12.8" y="4.3" width="3.2" height="3.2"/><rect x="0" y="8.6" width="3.2" height="3.2"/><rect x="4.3" y="8.6" width="3.2" height="3.2"/><rect x="8.6" y="8.6" width="3.2" height="3.2"/><rect x="12.8" y="8.6" width="3.2" height="3.2"/></svg></button>
+          </div>
+          <select class="orden" id="orden" aria-label="Ordenar">
+            <option value="rec">Recomendado</option>
+            <option value="az">Nombre A–Z</option>
+            <option value="za">Nombre Z–A</option>
+            <option value="col">Por colección</option>
+          </select>
+        </div>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="rejilla rejilla--3 cargando" id="rejilla"></div>
+      <section class="recientes oculto" id="sec-recientes">
+        <div class="sec__cab sec__cab--entre">
+          <div><span class="cejilla">Has mirado</span><h2 class="titulo-sec" style="font-size:clamp(22px,2.4vw,30px)">Vistos hace poco</h2></div>
+          <button class="enlace-sub" id="borrar-recientes">Borrar</button>
+        </div>
+        <div class="rejilla rejilla--4" id="recientes"></div>
+      </section>
+      <div class="vacio oculto" id="vacio">
+        <h3>No hay prendas con esos filtros</h3>
+        <p>Prueba a quitar alguno, o escríbenos y te buscamos lo que necesitas.</p>
+        <button class="btn btn--linea" id="vacio-limpiar">Quitar filtros</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section class="seo-texto" id="seo-texto"><div class="env"><h2 class="seo-texto__tit">Colección Triana</h2><p>La colección Triana de <a href="/tienda/flamenca">flamenca</a> tiene una prenda: <a href="/producto/triana-bata">Bata flamenca Triana</a>.</p><p>Moda Infantil Bonita Kids es una tienda de ropa de bebé y de niño en Alcalá de Guadaíra (Sevilla). Nos escribes por WhatsApp, te ayudamos con la talla y te enviamos el pedido a toda España en 24/48 h. <a href="/moda-infantil">Enviamos a Sevilla, Dos Hermanas, Utrera, Carmona y más pueblos</a>.</p></div></section>
+
+<div id="pie"></div>
+<script src="/js/tienda.js"></script>
+<script src="/js/efectos.js"></script>
+<script src="/js/lista.js"></script>
+</body>
+</html>

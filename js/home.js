@@ -99,7 +99,7 @@
 
     caja.innerHTML = pilas.map((fotos, c) => {
       const p0 = quien[c][0];
-      return `<a class="hero__pila" data-pila="${c}" href="${p0 ? '/producto?id=' + encodeURIComponent(p0.id) : '/tienda'}">
+      return `<a class="hero__pila" data-pila="${c}" href="${p0 ? '/producto/' + encodeURIComponent(p0.id) : '/tienda'}">
       ${fotos.map((f, i) => `<img src="${f}" alt="${BK.esc(quien[c][i] ? quien[c][i].nombre : '')}"${i === 0 ? ' fetchpriority="high"' : ' decoding="async"'} class="${i === 0 ? 'on' : ''}" data-par="${c ? -0.2 : -0.11}">`).join('')}
       <span class="hero__eti"><small>Lleva</small><b>${BK.esc(p0 ? p0.nombre : '')}</b>${FLECHITA}</span>
     </a>`;
@@ -118,7 +118,7 @@
         const p = quien[c][idx];
         const eti = pila.querySelector('.hero__eti');
         if (!p) { eti.style.display = 'none'; return; }
-        pila.href = '/producto?id=' + encodeURIComponent(p.id);
+        pila.href = '/producto/' + encodeURIComponent(p.id);
         eti.style.display = '';
         if (eti.querySelector('b').textContent !== p.nombre) {
           eti.classList.add('cambia');
@@ -163,7 +163,7 @@
         </picture>`).join('')}</div>
       <div class="hero__lleva">${pan.map((p, i) => `
         <div class="hero__lleva-it${i ? '' : ' on'}"><small>En la foto</small>${p.prendas.map(x =>
-          `<a href="/producto?id=${encodeURIComponent(x.id)}">${BK.esc(x.nombre)}</a>`).join('<i aria-hidden="true">·</i>')}</div>`).join('')}
+          `<a href="/producto/${encodeURIComponent(x.id)}">${BK.esc(x.nombre)}</a>`).join('<i aria-hidden="true">·</i>')}</div>`).join('')}
       </div>`;
 
     const n = pan.length;
@@ -231,7 +231,7 @@
       const n = act.filter(p => p.coleccion === c.id).length;
       const lins = BK.lineasDe(c.id);
       return `
-      <a class="col-tarj aparece${n ? '' : ' col-tarj--pronto'}" href="${n ? '/tienda?col=' + c.id : BK.wa('¡Hola! Me interesa la colección ' + c.nombre + '. ¿Cuándo llega?')}"${n ? '' : ' target="_blank" rel="noopener"'}>
+      <a class="col-tarj aparece${n ? '' : ' col-tarj--pronto'}" href="${n ? '/tienda/' + c.id : BK.wa('¡Hola! Me interesa la colección ' + c.nombre + '. ¿Cuándo llega?')}"${n ? '' : ' target="_blank" rel="noopener"'}>
         <figure><img src="${gastar(c.portada || '/img/p/cols_' + c.id + '.jpg')}" alt="${BK.esc(c.nombre)}" loading="lazy">
           <span class="col-tarj__num">${String(i + 1).padStart(2, '0')}</span>
           ${n ? '' : '<span class="col-tarj__pronto">Muy pronto</span>'}
@@ -340,7 +340,7 @@
 
     if (prod) {
       const a = $('#det-cta');
-      a.href = '/producto?id=' + encodeURIComponent(prod.id);
+      a.href = '/producto/' + encodeURIComponent(prod.id);
       a.textContent = 'Ver el ' + prod.nombre.charAt(0).toLowerCase() + prod.nombre.slice(1);
       prodUsados.add(prod.id);
     }
@@ -370,7 +370,7 @@
 
     function lado(clave, p, i, total) {
       return `<div class="hermanos__lado" data-lado="${clave}">
-        <figure><a href="/producto?id=${encodeURIComponent(p.id)}"><img src="${conModelo(p)}" alt="${BK.esc(p.nombre)}" loading="lazy"></a>
+        <figure><a href="/producto/${encodeURIComponent(p.id)}"><img src="${conModelo(p)}" alt="${BK.esc(p.nombre)}" loading="lazy"></a>
           ${total > 1 ? `<div class="hermanos__flechas">
             <button data-mov="${clave}" data-d="-1" aria-label="Anterior">${FLECHA('i')}</button>
             <button data-mov="${clave}" data-d="1" aria-label="Siguiente">${FLECHA('d')}</button>
@@ -379,7 +379,7 @@
         <div class="hermanos__pie">
           <div>
             <small>${clave === 'a' ? 'Para ella' : 'Para él'}</small>
-            <h4><a href="/producto?id=${encodeURIComponent(p.id)}">${BK.esc(p.nombre)}</a></h4>
+            <h4><a href="/producto/${encodeURIComponent(p.id)}">${BK.esc(p.nombre)}</a></h4>
             <span style="font-size:11.5px;color:var(--tinta-tenue)">${BK.esc(BK.rangoTallas(p))}</span>
           </div>
         </div>
@@ -496,7 +496,7 @@
     const vel = [0.05, -0.07, 0.11];
     $('#look').innerHTML = piezas.slice(0, 3).map((x, i) => {
       const p = BK.porId(x.id);
-      return `<figure class="${cls[i]}" data-par="${vel[i]}"><a href="/producto?id=${encodeURIComponent(x.id)}">
+      return `<figure class="${cls[i]}" data-par="${vel[i]}"><a href="/producto/${encodeURIComponent(x.id)}">
         <img src="${x.f}" alt="${BK.esc(p ? p.nombre : '')}" loading="lazy">
         ${p ? `<span class="look__eti"><small>Lleva</small><b>${BK.esc(p.nombre)}</b>${FLECHITA}</span>` : ''}</a></figure>`;
     }).join('');
@@ -570,7 +570,7 @@
       .filter(x => x.p && !fotosUsadas.has(x.f));
     const fotos = (amb.length >= 6 ? amb : todas).slice(0, 6);
     $('#comunidad').innerHTML = fotos.map(x =>
-      `<a href="/producto?id=${encodeURIComponent(x.p.id)}"><img src="${x.f}" alt="${BK.esc(x.p.nombre)}" loading="lazy"></a>`).join('');
+      `<a href="/producto/${encodeURIComponent(x.p.id)}"><img src="${x.f}" alt="${BK.esc(x.p.nombre)}" loading="lazy"></a>`).join('');
     $('#redes-botones').innerHTML = BK.redes().map(r =>
       `<a class="btn btn--red btn--${r.n.toLowerCase()}" href="${r.url}" target="_blank" rel="noopener">${r.ico}<span>Síguenos en ${r.n}</span></a>`).join('');
   })();

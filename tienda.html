@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="es">
 <head>
+<script>(function(){var q=new URLSearchParams(location.search),p=location.pathname.replace(/\.html$/,''),d=null;
+if(p==='/producto'&&q.get('id')){d='/producto/'+encodeURIComponent(q.get('id'));q.delete('id');}
+else if(p==='/tienda'&&q.getAll('col').length===1&&q.getAll('linea').length+q.getAll('grupo').length<=1){
+d='/tienda/'+q.get('col')+(q.get('linea')?'/coleccion-'+q.get('linea'):q.get('grupo')?'/'+q.get('grupo'):'');q.delete('col');q.delete('linea');q.delete('grupo');}
+if(d){var r=q.toString();location.replace(d+(r?'?'+r:'')+location.hash);}})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tienda de ropa infantil de bautizo, ceremonia y flamenca en Sevilla · Bonita Kids</title>
@@ -99,7 +104,7 @@
   </div>
 </main>
 
-<section class="seo-texto" id="seo-texto"><div class="env"><h2 class="seo-texto__tit">Ropa infantil para los días especiales</h2><p>En la tienda tienes 111 prendas en 4 categorías: <a href="/tienda?col=bautizo">bautizos</a>, <a href="/tienda?col=ceremonia">ceremonias</a>, <a href="/tienda?col=invierno">temporada invierno</a>, <a href="/tienda?col=flamenca">flamenca</a>.</p><p>Moda Infantil Bonita Kids es una tienda de ropa de bebé y de niño en Alcalá de Guadaíra (Sevilla). Nos escribes por WhatsApp, te ayudamos con la talla y te enviamos el pedido a toda España en 24/48 h. <a href="/moda-infantil">Enviamos a Sevilla, Dos Hermanas, Utrera, Carmona y más pueblos</a>.</p></div></section>
+<section class="seo-texto" id="seo-texto"><div class="env"><h2 class="seo-texto__tit">Ropa infantil para los días especiales</h2><p>En la tienda tienes 111 prendas en 4 categorías: <a href="/tienda/bautizo">bautizos</a>, <a href="/tienda/ceremonia">ceremonias</a>, <a href="/tienda/invierno">temporada invierno</a>, <a href="/tienda/flamenca">flamenca</a>.</p><p>Moda Infantil Bonita Kids es una tienda de ropa de bebé y de niño en Alcalá de Guadaíra (Sevilla). Nos escribes por WhatsApp, te ayudamos con la talla y te enviamos el pedido a toda España en 24/48 h. <a href="/moda-infantil">Enviamos a Sevilla, Dos Hermanas, Utrera, Carmona y más pueblos</a>.</p></div></section>
 
 <div id="pie"></div>
 <script src="/js/tienda.js"></script>
