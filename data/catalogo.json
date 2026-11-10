@@ -356,7 +356,7 @@
   },
   {
    "n": "Gris",
-   "hex": "#6F7C7A"
+   "hex": "#A3A3A3"
   },
   {
    "n": "Azul",
@@ -5294,6 +5294,9 @@
    ],
    "fotos": [
     "/img/p/bk2/ia-abrigo-carlita.jpg",
+    "/img/p/bk2/ia-abrigo-carlita-celeste.jpg",
+    "/img/p/bk2/ia-abrigo-carlita-burdeos.jpg",
+    "/img/p/bk2/ia-abrigo-carlita-azul-marino.jpg",
     "/img/p/bk2/carlita-003.jpg"
    ],
    "descripcion": "Abrigo Carlita, de la temporada de invierno.",
@@ -5329,6 +5332,8 @@
    ],
    "fotos": [
     "/img/p/bk2/ia-abrigo-albita-blanco.jpg",
+    "/img/p/bk2/ia-abrigo-albita-blanco-celeste.jpg",
+    "/img/p/bk2/ia-abrigo-albita-blanco-burdeos.jpg",
     "/img/p/bk2/albita-017.jpg",
     "/img/p/bk2/albita-004.jpg",
     "/img/p/bk2/albita-012.jpg",
@@ -5395,11 +5400,7 @@
     "5 años"
    ],
    "colores": [
-    "Marfil",
-    "Azul marino",
-    "Celeste",
-    "Burdeos",
-    "Gris"
+    "Blanco"
    ],
    "fotos": [
     "/img/p/bk2/davinia-011.jpg"
@@ -5471,6 +5472,7 @@
    ],
    "fotos": [
     "/img/p/bk2/ia-abrigo-pablito-gris.jpg",
+    "/img/p/bk2/ia-abrigo-pablito-gris-burdeos.jpg",
     "/img/p/bk2/pablito-007.jpg",
     "/img/p/bk2/pablito-005.jpg",
     "/img/p/bk2/pablito-013.jpg",
@@ -5501,11 +5503,7 @@
     "5 años"
    ],
    "colores": [
-    "Marfil",
-    "Azul marino",
-    "Celeste",
-    "Burdeos",
-    "Gris"
+    "Blanco"
    ],
    "fotos": [
     "/img/p/bk2/luis-008.jpg"
@@ -5535,11 +5533,7 @@
     "5 años"
    ],
    "colores": [
-    "Azul marino",
-    "Marfil",
-    "Celeste",
-    "Burdeos",
-    "Gris"
+    "Azul marino"
    ],
    "fotos": [
     "/img/p/bk2/ia-abrigo-marino.jpg",
@@ -5641,6 +5635,7 @@
    ],
    "colores": [],
    "fotos": [
+    "/img/p/bk2/ia-andrea-jesusito-cuadritos.jpg",
     "/img/p/bk2/andrea-046.jpg"
    ],
    "descripcion": "Jesusito con braguitas de la colección Andrea.",
@@ -5757,6 +5752,7 @@
    ],
    "colores": [],
    "fotos": [
+    "/img/p/bk2/ia-andrea-pelele-baberola.jpg",
     "/img/p/bk2/andrea-054.jpg"
    ],
    "descripcion": "Pelele con baberola de punto de la colección Andrea.",
@@ -5786,6 +5782,7 @@
    ],
    "colores": [],
    "fotos": [
+    "/img/p/bk2/ia-andrea-conjunto.jpg",
     "/img/p/bk2/andrea-056.jpg"
    ],
    "descripcion": "Conjunto de pantalón bombacho y camisa de la colección Andrea.",
@@ -5873,6 +5870,7 @@
    ],
    "colores": [],
    "fotos": [
+    "/img/p/bk2/ia-andrea-ranita-cuadritos.jpg",
     "/img/p/bk2/andrea-065.jpg"
    ],
    "descripcion": "Ranita de cuadritos de la colección Andrea.",
@@ -6662,6 +6660,9 @@
    "orden": 27,
    "ninos": true,
    "fotos": [
+    "/img/p/bk2/ia-andrea-jesusito-cuadritos.jpg",
+    "/img/p/bk2/ia-andrea-conjunto.jpg",
+    "/img/p/bk2/ia-andrea-ranita-cuadritos.jpg",
     "/img/p/bk2/andrea-024.jpg",
     "/img/p/bk2/andrea-061.jpg",
     "/img/p/bk2/andrea-046.jpg"

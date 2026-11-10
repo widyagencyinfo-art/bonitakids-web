@@ -142,6 +142,9 @@
      (<picture>). Si alguna pareja de prendas ya no está activa, esa foto no sale; si no queda
      ninguna, vuelve el pase de dos columnas de siempre. */
   const PANORAMAS = [
+    // Ana, 10-nov: «para la temporada de invierno, que se vean abrigos, que no sea todo de ceremonias»
+    { n: 'hero_invierno1', ids: ['abrigo-albita', 'abrigo-pablito'] },
+    { n: 'hero_invierno2', ids: ['abrigo-carlita', 'abrigo-marino'] },
     { n: 'hero_leonor', ids: ['leonor-encaje', 'leonor-conjunto-pajarita'] },
     { n: 'hero_burdeos', ids: ['abril-burdeos', 'abril-conjunto-burdeos'] },
   ];
