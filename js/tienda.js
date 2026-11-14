@@ -463,6 +463,7 @@
         <a href="/legal">Aviso legal</a><a href="/legal#privacidad">Privacidad</a><a href="/legal">Condiciones de venta</a>
       </span>
       <span>Precio bajo consulta, sin compromiso.</span>
+      <span>Web hecha por <a href="https://widy.agency" target="_blank" rel="noopener">Widy Agency</a></span>
     </div>
   </div>
 </footer>
