@@ -1098,3 +1098,5 @@ blockquote,figure{margin:0}
 
 .pie__legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .pie__legal a:hover{color:var(--tinta)}
+
+.pie__firma{flex-basis:100%}
