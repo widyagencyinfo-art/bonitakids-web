@@ -128,10 +128,10 @@
       barra.querySelectorAll('button').forEach((b, i) => {
         b.setAttribute('aria-current', i === idx);
         const l = b.querySelector('i'); l.style.transition = 'none'; l.style.width = '0';
-        if (i === idx) requestAnimationFrame(() => { l.style.transition = 'width 5s linear'; l.style.width = '100%'; });
+        if (i === idx) requestAnimationFrame(() => { l.style.transition = 'width 4s linear'; l.style.width = '100%'; });
       });
     }
-    function arrancar() { clearInterval(reloj); reloj = setInterval(() => ir(idx + 1), 5200); }
+    function arrancar() { clearInterval(reloj); reloj = setInterval(() => ir(idx + 1), 4000); }
     barra.querySelectorAll('button').forEach(b => b.onclick = () => { ir(+b.dataset.p); arrancar(); });
     if (n > 1) { ir(0); arrancar(); }
     else barra.style.display = 'none';
@@ -141,13 +141,10 @@
      Una foto ancha de los hermanos a juego en el ordenador y su versión vertical en el móvil
      (<picture>). Si alguna pareja de prendas ya no está activa, esa foto no sale; si no queda
      ninguna, vuelve el pase de dos columnas de siempre. */
-  const PANORAMAS = [
-    // Ana, 10-nov: «para la temporada de invierno, que se vean abrigos, que no sea todo de ceremonias»
-    { n: 'hero_invierno1', ids: ['abrigo-albita', 'abrigo-pablito'] },
-    { n: 'hero_invierno2', ids: ['abrigo-carlita', 'abrigo-marino'] },
-    { n: 'hero_leonor', ids: ['leonor-encaje', 'leonor-conjunto-pajarita'] },
-    { n: 'hero_burdeos', ids: ['abril-burdeos', 'abril-conjunto-burdeos'] },
-  ];
+  // 19-nov: Ana quiere en la portada una foto de CADA categoría (bautizo, ceremonia, invierno, flamenca, abrigo) con niños:
+  // las panorámicas de abrigos/ceremonia se apartan (PANORAMAS_OFF) y sale el pase de fotos reales (tienda.heroPilas).
+  const PANORAMAS_OFF = [];
+  const PANORAMAS = PANORAMAS_OFF;
   function heroPanorama() {
     const caja = $('#hero-paneles'); if (!caja) return false;
     const pan = PANORAMAS

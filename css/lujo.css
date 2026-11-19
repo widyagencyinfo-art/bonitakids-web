@@ -809,3 +809,8 @@ section[id]{scroll-margin-top:calc(var(--cab) + 12px)}
   .pueblo__lista{grid-template-columns:1fr}
   .pueblo__acc .btn{flex:1 1 100%;text-align:center}
 }
+
+/* 19-nov: rejilla de la portada con minmax(0,1fr): una foto ancha no ensancha la portada en el móvil */
+.hero--sangre{grid-template-columns:minmax(0,1fr)}
+.hero--sangre .hero__paneles{min-width:0;overflow:hidden}
+@media (max-width:900px){.hero--sangre .hero__barra{max-width:100%;gap:4px}.hero--sangre .hero__barra button{flex:1 1 0;min-width:0;max-width:38px;width:auto}}
