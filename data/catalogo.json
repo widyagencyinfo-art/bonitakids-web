@@ -5290,7 +5290,8 @@
     "Marfil",
     "Azul marino",
     "Celeste",
-    "Burdeos"
+    "Burdeos",
+    "Camel"
    ],
    "fotos": [
     "/img/p/bk2/ia-abrigo-carlita.jpg",
@@ -5306,7 +5307,7 @@
     "Diario"
    ],
    "quien": "nina",
-   "orden": 112
+   "orden": 121
   },
   {
    "id": "abrigo-albita",
@@ -5328,7 +5329,8 @@
     "Azul marino",
     "Celeste",
     "Burdeos",
-    "Gris"
+    "Gris",
+    "Camel"
    ],
    "fotos": [
     "/img/p/bk2/ia-abrigo-albita-blanco.jpg",
@@ -5346,7 +5348,7 @@
     "Diario"
    ],
    "quien": "nina",
-   "orden": 113
+   "orden": 122
   },
   {
    "id": "abrigo-norma",
@@ -5368,7 +5370,8 @@
     "Azul marino",
     "Celeste",
     "Burdeos",
-    "Gris"
+    "Gris",
+    "Camel"
    ],
    "fotos": [
     "/img/p/bk2/ia-abrigo-norma.jpg",
@@ -5382,7 +5385,7 @@
     "Diario"
    ],
    "quien": "nina",
-   "orden": 114
+   "orden": 123
   },
   {
    "id": "abrigo-davinia",
@@ -5412,7 +5415,7 @@
     "Diario"
    ],
    "quien": "nina",
-   "orden": 115
+   "orden": 124
   },
   {
    "id": "chaqueta-carmina",
@@ -5434,7 +5437,8 @@
     "Marfil",
     "Azul marino",
     "Celeste",
-    "Burdeos"
+    "Burdeos",
+    "Camel"
    ],
    "fotos": [
     "/img/p/bk2/carmina-019.jpg"
@@ -5446,7 +5450,7 @@
     "Diario"
    ],
    "quien": "nina",
-   "orden": 116
+   "orden": 125
   },
   {
    "id": "abrigo-pablito",
@@ -5468,7 +5472,8 @@
     "Marfil",
     "Azul marino",
     "Celeste",
-    "Burdeos"
+    "Burdeos",
+    "Camel"
    ],
    "fotos": [
     "/img/p/bk2/ia-abrigo-pablito-gris.jpg",
@@ -5485,7 +5490,7 @@
     "Diario"
    ],
    "quien": "nino",
-   "orden": 117
+   "orden": 126
   },
   {
    "id": "abrigo-luis",
@@ -5515,7 +5520,7 @@
     "Diario"
    ],
    "quien": "nino",
-   "orden": 118
+   "orden": 127
   },
   {
    "id": "abrigo-marino",
@@ -5547,7 +5552,7 @@
     "Diario"
    ],
    "quien": "nino",
-   "orden": 119
+   "orden": 128
   },
   {
    "id": "abrigo-moises",
@@ -5569,7 +5574,8 @@
     "Azul marino",
     "Celeste",
     "Burdeos",
-    "Gris"
+    "Gris",
+    "Camel"
    ],
    "fotos": [
     "/img/p/bk2/moises-015.jpg"
@@ -5581,7 +5587,7 @@
     "Diario"
    ],
    "quien": "nino",
-   "orden": 120
+   "orden": 129
   },
   {
    "id": "abrigo-salva",
@@ -5603,7 +5609,8 @@
     "Azul marino",
     "Celeste",
     "Burdeos",
-    "Gris"
+    "Gris",
+    "Camel"
    ],
    "fotos": [
     "/img/p/bk2/salva-018.jpg"
@@ -5615,7 +5622,7 @@
     "Diario"
    ],
    "quien": "nino",
-   "orden": 121
+   "orden": 130
   },
   {
    "id": "andrea-jesusito-cuadritos",
@@ -5645,7 +5652,7 @@
     "Diario"
    ],
    "quien": "bebe",
-   "orden": 122
+   "orden": 112
   },
   {
    "id": "andrea-capota",
@@ -5674,7 +5681,7 @@
     "Diario"
    ],
    "quien": "bebe",
-   "orden": 123
+   "orden": 113
   },
   {
    "id": "andrea-pelele",
@@ -5703,7 +5710,7 @@
     "Diario"
    ],
    "quien": "bebe",
-   "orden": 124
+   "orden": 114
   },
   {
    "id": "andrea-ranita",
@@ -5732,7 +5739,7 @@
     "Diario"
    ],
    "quien": "bebe",
-   "orden": 125
+   "orden": 115
   },
   {
    "id": "andrea-pelele-baberola",
@@ -5762,7 +5769,7 @@
     "Diario"
    ],
    "quien": "bebe",
-   "orden": 126
+   "orden": 116
   },
   {
    "id": "andrea-conjunto",
@@ -5792,7 +5799,7 @@
     "Diario"
    ],
    "quien": "bebe",
-   "orden": 127
+   "orden": 117
   },
   {
    "id": "andrea-jesusito-lunares",
@@ -5821,7 +5828,7 @@
     "Diario"
    ],
    "quien": "bebe",
-   "orden": 128
+   "orden": 118
   },
   {
    "id": "andrea-ranita-saco",
@@ -5850,7 +5857,7 @@
     "Diario"
    ],
    "quien": "bebe",
-   "orden": 129
+   "orden": 119
   },
   {
    "id": "andrea-ranita-cuadritos",
@@ -5880,7 +5887,7 @@
     "Diario"
    ],
    "quien": "bebe",
-   "orden": 130
+   "orden": 120
   },
   {
    "id": "diana-vestido",
@@ -6759,7 +6766,7 @@
    "nombre": "Abrigos niña",
    "categoria": "invierno",
    "desc": "Abrigos y chaquetas de niña para el invierno, de 12 meses a 5 años.",
-   "orden": 25,
+   "orden": 26,
    "ninos": false,
    "sueltos": true,
    "fotos": [
@@ -6774,7 +6781,7 @@
    "nombre": "Abrigos niño",
    "categoria": "invierno",
    "desc": "Abrigos y trenkas de niño para el invierno, de 12 meses a 5 años.",
-   "orden": 26,
+   "orden": 27,
    "ninos": true,
    "sueltos": true,
    "fotos": [
@@ -6789,7 +6796,7 @@
    "nombre": "Andrea",
    "categoria": "invierno",
    "desc": "",
-   "orden": 27,
+   "orden": 25,
    "ninos": true,
    "fotos": [
     "/img/p/bk2/ia-andrea-jesusito-cuadritos.jpg",
