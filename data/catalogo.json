@@ -5881,6 +5881,137 @@
    ],
    "quien": "bebe",
    "orden": 130
+  },
+  {
+   "id": "diana-vestido",
+   "nombre": "Vestido de ceremonia Diana",
+   "coleccion": "ceremonia",
+   "linea": "diana",
+   "tipo": "Vestido",
+   "tallaje": "vestidos",
+   "tallas": [
+    "6 meses",
+    "9 meses",
+    "12 meses",
+    "18 meses",
+    "24 meses",
+    "3 años",
+    "4 años",
+    "5 años",
+    "6 años",
+    "7 años",
+    "8 años"
+   ],
+   "colores": [
+    "Celeste",
+    "Verde empolvado",
+    "Maquillaje",
+    "Camel"
+   ],
+   "fotos": [
+    "/img/p/bk2/diana-047.jpg",
+    "/img/p/bk2/diana-053.jpg",
+    "/img/p/bk2/diana-054.jpg",
+    "/img/p/bk2/diana-055.jpg",
+    "/img/p/bk2/diana-050.jpg",
+    "/img/p/bk2/diana-051.jpg"
+   ],
+   "descripcion": "Vestido de ceremonia de la colección Diana.",
+   "destacado": false,
+   "activo": true,
+   "ocasion": [
+    "Ceremonia"
+   ],
+   "quien": "nina",
+   "orden": 131
+  },
+  {
+   "id": "diana-baton-largo",
+   "nombre": "Batón largo y capota Diana",
+   "coleccion": "bautizo",
+   "linea": "diana-bautizo",
+   "tipo": "Batón",
+   "tallaje": "baton",
+   "tallas": [
+    "3 meses",
+    "6 meses",
+    "12 meses"
+   ],
+   "colores": [
+    "Blanco",
+    "Beige"
+   ],
+   "fotos": [
+    "/img/p/bk2/diana-061.jpg",
+    "/img/p/bk2/diana-062.jpg",
+    "/img/p/bk2/diana-065.jpg"
+   ],
+   "descripcion": "Batón largo con capota de la colección Diana, con capa a juego.",
+   "destacado": false,
+   "activo": true,
+   "ocasion": [
+    "Bautizo"
+   ],
+   "quien": "bebe",
+   "orden": 132
+  },
+  {
+   "id": "diana-baton-normal",
+   "nombre": "Batón normal con capota Diana",
+   "coleccion": "bautizo",
+   "linea": "diana-bautizo",
+   "tipo": "Batón",
+   "tallaje": "baton",
+   "tallas": [
+    "3 meses",
+    "6 meses",
+    "12 meses"
+   ],
+   "colores": [
+    "Blanco",
+    "Beige"
+   ],
+   "fotos": [
+    "/img/p/bk2/diana-067.jpg"
+   ],
+   "descripcion": "Batón normal con capota de la colección Diana.",
+   "destacado": false,
+   "activo": true,
+   "ocasion": [
+    "Bautizo"
+   ],
+   "quien": "bebe",
+   "orden": 133
+  },
+  {
+   "id": "diana-pelele",
+   "nombre": "Pelele Diana",
+   "coleccion": "bautizo",
+   "linea": "diana-bautizo",
+   "tipo": "Pelele",
+   "tallaje": "bebe",
+   "tallas": [
+    "3 meses",
+    "6 meses",
+    "9 meses",
+    "12 meses",
+    "18 meses",
+    "24 meses"
+   ],
+   "colores": [
+    "Blanco"
+   ],
+   "fotos": [
+    "/img/p/bk2/diana-070.jpg"
+   ],
+   "descripcion": "Pelele de bautizo de la colección Diana.",
+   "destacado": false,
+   "activo": true,
+   "ocasion": [
+    "Bautizo"
+   ],
+   "quien": "bebe",
+   "orden": 134
   }
  ],
  "ocasiones": [
@@ -6667,6 +6798,37 @@
     "/img/p/bk2/andrea-061.jpg",
     "/img/p/bk2/andrea-046.jpg"
    ]
+  },
+  {
+   "id": "diana",
+   "nombre": "Diana",
+   "categoria": "ceremonia",
+   "fotos": [
+    "/img/p/bk2/diana-047.jpg",
+    "/img/p/bk2/diana-054.jpg",
+    "/img/p/bk2/diana-053.jpg",
+    "/img/p/bk2/diana-055.jpg",
+    "/img/p/bk2/diana-050.jpg"
+   ],
+   "desc": "",
+   "ninos": true,
+   "orden": 48,
+   "grupo": "ceremonia-ninas"
+  },
+  {
+   "id": "diana-bautizo",
+   "nombre": "Diana",
+   "categoria": "bautizo",
+   "fotos": [
+    "/img/p/bk2/diana-061.jpg",
+    "/img/p/bk2/diana-062.jpg",
+    "/img/p/bk2/diana-067.jpg",
+    "/img/p/bk2/diana-065.jpg",
+    "/img/p/bk2/diana-070.jpg"
+   ],
+   "desc": "",
+   "ninos": false,
+   "orden": 49
   }
  ],
  "grupos": [
@@ -6798,6 +6960,10 @@
   "/img/p/bk2/albita-016.jpg": "50% 32%",
   "/img/p/bk2/pablito-010.jpg": "50% 56%",
   "/img/p/bk2/pablito-013.jpg": "50% 82%",
-  "/img/p/bk2/moises-015.jpg": "33% 50%"
+  "/img/p/bk2/moises-015.jpg": "33% 50%",
+  "/img/p/bk2/diana-047.jpg": "50% 34%",
+  "/img/p/bk2/diana-053.jpg": "50% 24%",
+  "/img/p/bk2/diana-054.jpg": "50% 0%",
+  "/img/p/bk2/diana-055.jpg": "50% 20%"
  }
 }
